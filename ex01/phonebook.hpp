@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 21:18:55 by adbouras          #+#    #+#             */
-/*   Updated: 2024/09/19 11:41:40 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/09/20 19:09:51 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class Contact
 class PhoneBook
 {
 	public:
-		Contact	contact[9];
+		Contact	contact[8];
 };
 
 /***	utils.cpp	*********************************/

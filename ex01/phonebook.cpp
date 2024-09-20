@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 18:53:37 by adbouras          #+#    #+#             */
-/*   Updated: 2024/09/19 12:09:35 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/09/20 18:55:28 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int main(void)
 {
 	PhoneBook	contacts;
 	str			line;
+	std::cout << "\nWelcome to Ringception!";
 	while (1)
 	{
 		ft_instructions();
@@ -30,5 +31,6 @@ int main(void)
 			break ;
 		line = "";
 	}
+	std::cout << "Catch you later!" << std::endl;
     return (0);
 }
