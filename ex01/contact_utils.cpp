@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 11:36:08 by adbouras          #+#    #+#             */
-/*   Updated: 2024/09/20 19:10:02 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/09/21 19:32:07 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,22 @@ void	add_contact(PhoneBook *contacts)
 	static int	i;
 
 	std::cout << "First Name : ";
-	temp.first_name = ft_getline();
+	temp.set_info("first", ft_getline());
 	std::cout << "\nLast Name : ";
-	temp.last_name = ft_getline();
+	temp.set_info("last", ft_getline());
 	std::cout << "\nNick Name : ";
-	temp.nickname = ft_getline();
+	temp.set_info("nick", ft_getline());
 	std::cout << "\nPhone Number : ";
-	temp.phone_num = ft_getline();
+	temp.set_info("phone", ft_getline());
 	std::cout << "\nDarkest secret : ";
-	temp.secret = ft_getline();
+	temp.set_info("secret", ft_getline());
 	if (empty_field(temp))
 	{
 		std::cout << "Contact was not added!" << std::endl;
 		return ;
 	}
-	contacts->contact[i] = temp;
+	// contacts->contact[i] = temp;
+	contacts->set_contact(i, temp);
 	if (i < 7)
 		i++;
 }
@@ -56,13 +57,13 @@ static void	display_all_contacts(PhoneBook contacts)
 	std::cout << "|_______|____________|___________|___________|" << std::endl;
 	while (i < 8)
 	{
-		temp = contacts.contact[i];
-		if (temp.first_name.empty())
+		temp = contacts.get_contact(i);
+		if (temp.get_info("first").empty())
 			break ;
 		std::cout << "| " << std::left << std::setw(6) << i + 1;
-		std::cout << "| " << std::left << std::setw(11) << ft_truncate(temp.first_name);
-		std::cout << "| " << std::left << std::setw(10) << ft_truncate(temp.last_name);
-		std::cout << "| " << std::left << std::setw(10) << ft_truncate(temp.nickname);
+		std::cout << "| " << std::left << std::setw(11) << ft_truncate(temp.get_info("first"));
+		std::cout << "| " << std::left << std::setw(10) << ft_truncate(temp.get_info("last"));
+		std::cout << "| " << std::left << std::setw(10) << ft_truncate(temp.get_info("nick"));
 		std::cout << "|" << std::endl;
 		std::cout << "|_______|____________|___________|___________|" << std::endl;
 		i++;
@@ -78,16 +79,16 @@ static void	display_contact(PhoneBook contacts, str index)
 	i = std::stoi(index);
 	if (!i)
 		return ;
-	if (i > 8 || contacts.contact[i - 1].first_name.empty())
+	if (i > 8 || contacts.get_contact(i - 1).get_info("first").empty())
 	{
 		std::cout << "[Irrelevant Index]" << std::endl;
 		return ;
 	}
-	std::cout << "First Name : " << contacts.contact[i - 1].first_name << std::endl;
-	std::cout << "Last Name : " << contacts.contact[i - 1].last_name << std::endl;
-	std::cout << "Nick Name : " << contacts.contact[i - 1].nickname << std::endl;
-	std::cout << "Phone Number : " << contacts.contact[i - 1].phone_num << std::endl;
-	std::cout << "Darkest secret : " << contacts.contact[i - 1].secret << std::endl;
+	std::cout << "First Name : " << contacts.get_contact(i - 1).get_info("first") << std::endl;
+	std::cout << "Last Name : " << contacts.get_contact(i - 1).get_info("last") << std::endl;
+	std::cout << "Nick Name : " << contacts.get_contact(i - 1).get_info("nick") << std::endl;
+	std::cout << "Phone Number : " << contacts.get_contact(i - 1).get_info("phone") << std::endl;
+	std::cout << "Darkest secret : " << contacts.get_contact(i - 1).get_info("secret") << std::endl;
 }
 
 void	search_contact(PhoneBook *contacts)

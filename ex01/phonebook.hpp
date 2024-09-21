@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 21:18:55 by adbouras          #+#    #+#             */
-/*   Updated: 2024/09/20 19:09:51 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/09/21 19:28:21 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,27 +18,24 @@ typedef std::string str;
 
 class Contact
 {
-	public:
-		str	first_name;
-		str	last_name;
-		str	nickname;
-		str	phone_num;
-		str	secret;
-	Contact() {}
-	Contact(str first_name, str last_name, str nickname, str phone_num, str secret)
-	{
-		this->first_name = first_name;
-		this->last_name = last_name;
-		this->nickname = nickname;
-		this->phone_num = phone_num;
-		this->secret = secret;
-	}
+private:
+	str		first_name;
+	str		last_name;
+	str		nickname;
+	str		phone_num;
+	str		secret;
+public:
+    void    set_info(str info, str value);
+    str     get_info(str info);
 };
 
 class PhoneBook
 {
-	public:
-		Contact	contact[8];
+private:
+	Contact	contact[8];
+public:
+    void    set_contact(int index, Contact contact);
+    Contact get_contact(int index);
 };
 
 /***	utils.cpp	*********************************/
@@ -51,5 +48,3 @@ bool	empty_field(Contact	contact);
 void	ft_instructions(void);
 void	add_contact(PhoneBook *contacts);
 void	search_contact(PhoneBook *contacts);
-
-/***		***/
