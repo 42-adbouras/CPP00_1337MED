@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/09/17 18:49:11 by adbouras          #+#    #+#              #
-#    Updated: 2024/09/22 10:59:41 by adbouras         ###   ########.fr        #
+#    Created: 2024/09/22 10:59:32 by adbouras          #+#    #+#              #
+#    Updated: 2024/09/22 18:43:49 by adbouras         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,11 +20,11 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = Ringception
+NAME = bank
 
-SRC = phonebook.cpp utils.cpp contact_utils.cpp set_get.cpp
+SRC = tests.cpp Account.cpp
 
-NCLD = phonebook.hpp
+NCLD = Account.hpp
 
 OBJ_DIR = objects/
 

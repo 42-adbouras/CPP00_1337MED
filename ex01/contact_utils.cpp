@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 11:36:08 by adbouras          #+#    #+#             */
-/*   Updated: 2024/09/21 19:32:07 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/09/22 10:50:26 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	add_contact(PhoneBook *contacts)
 	Contact		temp;
 	static int	i;
 
-	std::cout << "First Name : ";
+	std::cout << "\nFirst Name : ";
 	temp.set_info("first", ft_getline());
 	std::cout << "\nLast Name : ";
 	temp.set_info("last", ft_getline());
@@ -40,10 +40,10 @@ void	add_contact(PhoneBook *contacts)
 		std::cout << "Contact was not added!" << std::endl;
 		return ;
 	}
-	// contacts->contact[i] = temp;
 	contacts->set_contact(i, temp);
-	if (i < 7)
-		i++;
+	i++;
+	if (i > 7)
+		i = 0;
 }
 
 static void	display_all_contacts(PhoneBook contacts)

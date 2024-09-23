@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 21:18:55 by adbouras          #+#    #+#             */
-/*   Updated: 2024/09/21 19:28:21 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/09/21 21:49:44 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ class PhoneBook
 private:
 	Contact	contact[8];
 public:
-    void    set_contact(int index, Contact contact);
-    Contact get_contact(int index);
+	void	set_contact(int index, Contact contact);
+	Contact	get_contact(int index);
 };
 
 /***	utils.cpp	*********************************/

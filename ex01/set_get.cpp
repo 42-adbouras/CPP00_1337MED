@@ -6,13 +6,13 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 15:56:41 by adbouras          #+#    #+#             */
-/*   Updated: 2024/09/21 19:28:27 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/09/22 10:47:07 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
-void    Contact::set_info(str info, str value)
+void	Contact::set_info(str info, str value)
 {
 	if (info == "first")
 		this->first_name = value;
@@ -26,7 +26,7 @@ void    Contact::set_info(str info, str value)
 		this->secret = value;
 }
 
-str     Contact::get_info(str info)
+str	Contact::get_info(str info)
 {
 	if (info == "first")
 		return (first_name);
