@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_get.cpp                                        :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/21 15:56:41 by adbouras          #+#    #+#             */
-/*   Updated: 2024/09/26 12:39:06 by adbouras         ###   ########.fr       */
+/*   Created: 2024/09/26 12:48:55 by adbouras          #+#    #+#             */
+/*   Updated: 2024/09/26 17:39:18 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ringception.hpp"
+#include "./includes/Contact.hpp"
 
 void	Contact::set_info(str info, str value)
 {
 	if (info == "first")
-		this->first_name = value;
+		first_name = value;
 	else if (info == "last")
-		this->last_name = value;
+		last_name = value;
 	else if (info == "nick")
-		this->nickname = value;
+		nickname = value;
 	else if (info == "phone")
-		this->phone_num = value;
+		phone_num = value;
 	else if (info == "secret")
-		this->secret = value;
+		secret = value;
 }
 
 str	Contact::get_info(str info)
@@ -39,14 +39,4 @@ str	Contact::get_info(str info)
 	else if (info == "secret")
 		return (secret);
 	return ("*** 1337 ***");
-}
-
-void	PhoneBook::set_contact(int index, Contact contact)
-{
-	this->contact[index] = contact;
-}
-
-Contact	PhoneBook::get_contact(int index)
-{
-	return (this->contact[index]);
 }

@@ -6,11 +6,11 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 11:23:23 by adbouras          #+#    #+#             */
-/*   Updated: 2024/09/26 12:33:14 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/09/26 17:46:10 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ringception.hpp"
+#include "./includes/Ringception.hpp"
 
 str	ft_getline(void)
 {

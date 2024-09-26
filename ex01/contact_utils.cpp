@@ -6,11 +6,11 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 11:36:08 by adbouras          #+#    #+#             */
-/*   Updated: 2024/09/26 12:38:41 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/09/26 18:14:55 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ringception.hpp"
+#include "./includes/Ringception.hpp"
 
 void	ft_instructions(void)
 {
@@ -25,6 +25,7 @@ void	add_contact(PhoneBook *contacts)
 	Contact		temp;
 	static int	i;
 
+	std::cout << "\nCONTACTS: [" << i << "/8]" << std::endl;
 	std::cout << "\nFirst Name : ";
 	temp.set_info("first", ft_getline());
 	std::cout << "\nLast Name : ";
@@ -41,9 +42,11 @@ void	add_contact(PhoneBook *contacts)
 		return ;
 	}
 	contacts->set_contact(i, temp);
-	i++;
-	if (i > 7)
+	if (++i > 7)
+	{
 		i = 0;
+		std::cout << "\n[Careful! Conatcts about to be overwriten]";
+	}
 }
 
 static void	display_all_contacts(PhoneBook contacts)
