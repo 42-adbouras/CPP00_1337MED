@@ -6,11 +6,11 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 11:23:23 by adbouras          #+#    #+#             */
-/*   Updated: 2024/09/21 19:10:48 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/09/26 12:33:14 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Ringception.hpp"
 
 str	ft_getline(void)
 {
@@ -56,12 +56,3 @@ str		ft_truncate(str string)
 		return (string.substr(0, 9) + ".");
 	return (string);
 }
-
-// Contact::Contact(str first_name, str last_name, str nickname, str phone_num, str secret)
-// {
-// 	this->first_name = first_name;
-// 	this->last_name = last_name;
-// 	this->nickname = nickname;
-// 	this->phone_num = phone_num;
-// 	this->secret = secret;
-// }

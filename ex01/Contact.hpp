@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 21:18:55 by adbouras          #+#    #+#             */
-/*   Updated: 2024/09/26 12:40:13 by adbouras         ###   ########.fr       */
+/*   Created: 2024/09/25 19:53:19 by adbouras          #+#    #+#             */
+/*   Updated: 2024/09/26 12:15:51 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PhoneBook_HPP
-# define PhoneBook_HPP
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
-#include "Ringception.hpp"
-#include "Contact.hpp"
+# include "Ringception.hpp"
 
-class PhoneBook
+typedef std::string str;
+
+class Contact
 {
 private:
-	Contact	contact[8];
+	str		first_name;
+	str		last_name;
+	str		nickname;
+	str		phone_num;
+	str		secret;
 public:
-	void	set_contact(int index, Contact contact);
-	Contact	get_contact(int index);
+    void    set_info(str info, str value);
+    str     get_info(str info);
 };
 
 #endif

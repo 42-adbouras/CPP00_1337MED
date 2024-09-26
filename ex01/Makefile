@@ -6,7 +6,7 @@
 #    By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/17 18:49:11 by adbouras          #+#    #+#              #
-#    Updated: 2024/09/22 10:59:41 by adbouras         ###   ########.fr        #
+#    Updated: 2024/09/26 12:34:00 by adbouras         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,9 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = Ringception
 
-SRC = phonebook.cpp utils.cpp contact_utils.cpp set_get.cpp
+SRC = main.cpp utils.cpp contact_utils.cpp set_get.cpp
 
-NCLD = phonebook.hpp
+NCLD = Ringception.hpp
 
 OBJ_DIR = objects/
 
