@@ -1,16 +1,16 @@
 ### Table of Contents
 
 - [Introduction](#introduction)
-	* [Namespaces:](#Namespaces)
-	* [Classes:](#Classes)
-    	* Access Specifiers:
-    	* Constructors:
-    	* Destructors:
-    	* Member Functions:
-	* Standard Input/Output Streams:
-  	* Initialization Lists:
-  	* Static Members:
-  	* Const Members:
+	* [Namespaces](Namespaces)
+	* [Classes](Classes)
+    	* [Access Specifiers](Access-Specifiers)
+    	* [Constructors](Constructors)
+    	* [Destructors](Destructors)
+    	* [Member Functions](Member Functions)
+	* [Standard Input/Output Streams](Standard-Input/Output-Streams)
+  	* [Initialization Lists](Initialization-Lists)
+  	* [Static Members](Static-Members)
+  	* [Const Members](Const-Members)
 - [ex00. Megaphone](#ex00-megaphone)
 	* [Example](#example)
 - [ex01. My Awesome PhoneBook](#ex01-my-awesome-phonebook)
@@ -30,8 +30,8 @@ Core!\
 We will discover new concepts step-by-step. The exercises will progressively increase
 in complexity.\
 
-# Namespaces:
-	Namespase is a declarative region that provides a scope to the identifiers (the names of types, functions, variables, etc) inside it.\
+### Namespaces:
+Namespase is a declarative region that provides a scope to the identifiers (the names of types, functions, variables, etc) inside it.\
 Namespaces are used in C++ to avoid name collisions. They allow you to group entities like classes, functions, and variables under a unique identifier.
 The standard library uses the `std` namespace. You can access it by using `std::` or by including `using namespace std;` at the beginning of your code.
 ```cpp
@@ -53,7 +53,7 @@ int main( void ) {
     return (0);
 }
 ```
-# Classes:
+### Classes:
 	A class in C++ is a user defined data type that encapsulates data and functions that operate on that data. It serves as a blueprint for creating an object.
 Here's a more detailed look at classes and their components.
 	- `Access Specifiers:`
@@ -152,30 +152,30 @@ Member functions can manipulate the data members of a class. They can also be de
     	}
 	};
 	```
-	- `Standard Input/Output Streams:`
+### Standard Input/Output Streams:
 C++ uses streams for input and output. The standard library provides `std::cin` for input and `std::cout` for output. These are part of the `<iostream>` library.
-	```cpp
- 	#include <iostream>
- 	int main( void ) {
-    	int age;
+```cpp
+#include <iostream>
+int main( void ) {
+	int age;
  
-    	std::cout << "Enter your age: ";
-    	std::cin >> age;
- 		std::cout << "You are " << age << " years old." << std::endl;
-    	return (0);
-	}
- 	```
- 	- `Initialization Lists:`
+	std::cout << "Enter your age: ";
+	std::cin >> age;
+	std::cout << "You are " << age << " years old." << std::endl;
+	return (0);
+}
+```
+### Initialization Lists:
 Initialization lists are used in constructors to initialize member variables before the constructor body runs. This is particularly useful for `const` and reference members.
-	```cpp
- 	class Point {
-	public:
-    	const int x;
-    	const int y;
+```cpp
+class Point {
+public:
+	const int x;
+	const int y;
     
-    	Point(int a, int b) : x(a), y(b) {} // Initialization list
-	};
- 	```
+	Point(int a, int b) : x(a), y(b) {} // Initialization list
+};
+```
  	- `Static Members:`
 Static members belong to the class rather than any specific object. They are shared among all instances of the class.
 	```cpp
