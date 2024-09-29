@@ -1,16 +1,25 @@
 ### Table of Contents
 
 - [Introduction](#introduction)
-  * [Namespaces:](namespaces:) 
+	* [Namespaces:](namespaces:)
+	* Classes:
+    	* Access Specifiers:
+    	* Constructors:
+    	* Destructors:
+    	* Member Functions:
+	* Constructors:
+	* Destructors:
+ 	* Member Functions:
+ 	* Standard Input/Output Streams:
+  	* Initialization Lists:
+  	* Static Members:
+  	* Const Members:
 - [ex00. Megaphone](#ex00-megaphone)
 	* [Example](#example)
 - [ex01. My Awesome PhoneBook](#ex01-my-awesome-phonebook)
 	* [Example](#example-1)
 - [ex02. The Job Of Your Dreams](#ex02-the-job-of-your-dreams)
 	* [Example](#example-2)
-- [Installation](#installation)
-- [References](#references)
-- [Summary](#summary)
 
 ## Introduction
 C++ is a powerful, high level programming language that supports both procedural and Object Oriented Programming paradigms.\
@@ -85,10 +94,114 @@ This is useful in inheritance.
 		```cpp
   		class Vehicle {
 		protected:
-    		std::string brand;
+			std::string brand;
 		};
   		```
+	- `Constructors:`
+A constructor is a special member function that is called when an object of a class is created. It typically initializes the object’s attributes. Constructors can be overloaded to provide different ways to initialize an object.
 
+		- `Default Constructor:` No parameters.
+		```cpp
+  		class Car {
+		public:
+			std::string brand;
+			Car() { // Default constructor
+				brand = "Porsche";
+			}
+		};
+		```
+		- `Parameterized Constructor:` Takes parameters to initialize attributes.
+		```cpp
+  		class Car {
+		public:
+    		std::string brand;
+    		Car(string brand) { // Parameterized constructor
+        		this->brand = brand;
+    		}
+		};
+  		```
+  		- `Copy Constructor:` Initializes an object using another object of the same class.
+    	```cpp
+		class Car {
+		public:
+    		std::string brand;
+    		Car(const Car &c) { // Copy constructor
+        		brand = c.brand;
+    		}
+		};
+		```
+	- `Destructors:`
+A destructor is a special member function called when an object goes out of scope or is explicitly deleted. It is used to free resources that the object may have acquired during its lifetime, such as dynamic memory.
+	```cpp
+ 	class Car {
+	public:
+    	std::string brand;
+    	Car(std::string b) : brand(b) {} // Constructor
+    	~Car() { // Destructor
+			std::cout << brand << " is being destroyed." << std::endl;
+    	}
+	};
+	```
+	- `Member Functions:`
+Member functions can manipulate the data members of a class. They can also be declared as `const`, meaning they do not modify the object’s state.
+	```cpp
+ 	class Car {
+	public:
+    	std::string brand;
+    	Car(tsd::string b) : brand(b) {}
+    
+    	void display() const { // Const member function
+     	   std::cout << "Brand: " << brand << std::endl;
+    	}
+	};
+	```
+	- `Standard Input/Output Streams:`
+C++ uses streams for input and output. The standard library provides `std::cin` for input and `std::cout` for output. These are part of the `<iostream>` library.
+	```cpp
+ 	#include <iostream>
+ 	int main( void ) {
+    	int age;
+ 
+    	std::cout << "Enter your age: ";
+    	std::cin >> age;
+ 		std::cout << "You are " << age << " years old." << std::endl;
+    	return (0);
+	}
+ 	```
+ 	- `Initialization Lists:`
+Initialization lists are used in constructors to initialize member variables before the constructor body runs. This is particularly useful for `const` and reference members.
+	```cpp
+ 	class Point {
+	public:
+    	const int x;
+    	const int y;
+    
+    	Point(int a, int b) : x(a), y(b) {} // Initialization list
+	};
+ 	```
+ 	- `Static Members:`
+Static members belong to the class rather than any specific object. They are shared among all instances of the class.
+	```cpp
+ 	class Counter {
+	public:
+    	static int count;
+    	Counter() { count++; }
+	};
+
+	int Counter::count = 0; // Definition of static member
+ 	```
+ 	- `Const Members:`
+`const` members of a class cannot be modified after they are initialized. This is useful for defining constants or protecting data from accidental changes.
+	```cpp
+ 	class Circle {
+	public:
+    	const double PI = 3.14159;
+    	double radius;
+    
+    	Circle(double r) : radius(r) {}
+	};
+ 	```
+These are the basic concepts of C++ programming. Understanding these will help us build more complex and efficient applications.
 
 
 
