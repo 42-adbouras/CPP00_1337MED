@@ -1,16 +1,16 @@
 ### Table of Contents
 
 - [Introduction](#introduction)
-	* [Namespaces](Namespaces)
-	* [Classes](Classes)
-    	* [Access Specifiers](Access-Specifiers)
-    	* [Constructors](Constructors)
-    	* [Destructors](Destructors)
-    	* [Member Functions](Member Functions)
-	* [Standard Input/Output Streams](Standard-Input/Output-Streams)
-  	* [Initialization Lists](Initialization-Lists)
-  	* [Static Members](Static-Members)
-  	* [Const Members](Const-Members)
+	* [Namespaces](#Namespaces)
+	* [Classes](#Classes)
+    	* Access Specifiers
+    	* Constructors
+    	* Destructors
+    	* Member Functions
+	* [Standard Input/Output Streams](#Standard-Input/Output-Streams)
+  	* [Initialization Lists](#Initialization-Lists)
+  	* [Static Members](#Static-Members)
+  	* [Const Members](#Const-Members)
 - [ex00. Megaphone](#ex00-megaphone)
 	* [Example](#example)
 - [ex01. My Awesome PhoneBook](#ex01-my-awesome-phonebook)
@@ -54,104 +54,104 @@ int main( void ) {
 }
 ```
 ### Classes:
-	A class in C++ is a user defined data type that encapsulates data and functions that operate on that data. It serves as a blueprint for creating an object.
+A class in C++ is a user defined data type that encapsulates data and functions that operate on that data. It serves as a blueprint for creating an object.
 Here's a more detailed look at classes and their components.
-	- `Access Specifiers:`
+- `Access Specifiers:`
 Access specifiers determine the visibility of class members (attributes and methods). The three main access specifiers are:
-		- `1. Public:` Members declared as public can be accessed from outside the class.
+* `1. Public:` Members declared as public can be accessed from outside the class.
 This is commonly used for methods that should be accessible to users of the class.
-		```cpp
-		class Car
- 		{
-		public:
-    		std::string brand;	// Public attribute
-    		void honk() { 	// Public method
-       	 std::cout << brand << " says Honk!" << std::endl;
-    		}
-		};
-		```
-		- `2. Private:` Members declared as private can only be accessed within the class itself.
+```cpp
+class Car
+{
+public:
+	std::string brand;	// Publicattribute
+	void honk() { 		// Public method
+		std::cout << brand << " says Honk!" <<std::endl;
+	}
+};
+```
+* `2. Private:` Members declared as private can only be accessed within the class itself.
 This is used to encapsulate and protect data from unintended access or modification.
-		```cpp
-  		class Car
-  		{
-		private:
-  			std::string brand; // Private attribute
-		public:
-			void setBrand(std::string brand) { // Public method to modify private attribute
-  				this->brand = brand;
-  			}
-  			void honk() {
-        		std::cout << brand << " Honk Honk!" << std::endl;
-  			}
-		};
-  		```
-  		- `3. Protected:` Members declared as protected can be accessed within the class and by derived classes.
+```cpp
+class Car
+{
+private:
+	std::string brand; // Private attribute
+public:
+	void setBrand(std::string brand) { // Public method to modify private attribute
+		this->brand = brand;
+	}
+	void honk() {
+		std::cout << brand << " Honk Honk!" << std::endl;
+	}
+};
+```
+- `3. Protected:` Members declared as protected can be accessed within the class and by derived classes.
 This is useful in inheritance.
-		```cpp
-  		class Vehicle {
-		protected:
-			std::string brand;
-		};
-  		```
-	- `Constructors:`
+```cpp
+class Vehicle {
+protected:
+	std::string brand;
+};
+```
+- `Constructors:`
 A constructor is a special member function that is called when an object of a class is created. It typically initializes the object’s attributes. Constructors can be overloaded to provide different ways to initialize an object.
 
-		- `Default Constructor:` No parameters.
-		```cpp
-  		class Car {
-		public:
-			std::string brand;
-			Car() { // Default constructor
-				brand = "Porsche";
-			}
-		};
-		```
-		- `Parameterized Constructor:` Takes parameters to initialize attributes.
-		```cpp
-  		class Car {
-		public:
-    		std::string brand;
-    		Car(string brand) { // Parameterized constructor
-        		this->brand = brand;
-    		}
-		};
-  		```
-  		- `Copy Constructor:` Initializes an object using another object of the same class.
-    	```cpp
-		class Car {
-		public:
-    		std::string brand;
-    		Car(const Car &c) { // Copy constructor
-        		brand = c.brand;
-    		}
-		};
-		```
-	- `Destructors:`
+- `Default Constructor:` No parameters.
+```cpp
+class Car {
+public:
+	std::string brand;
+	Car() { // Default constructor
+		brand = "Porsche";
+	}
+};
+```
+- `Parameterized Constructor:` Takes parameters tinitialize attributes.
+```cpp
+class Car {
+public:
+	std::string brand;
+	Car(string brand) { // Parameterized constructor
+		this->brand = brand;
+	}
+};
+```
+- `Copy Constructor:` Initializes an object usinanother object of the same class.
+```cpp
+class Car {
+public:
+	std::string brand;
+	Car(const Car &c) { // Copy constructor
+		brand = c.brand;
+	}
+};
+```
+- `Destructors:`
 A destructor is a special member function called when an object goes out of scope or is explicitly deleted. It is used to free resources that the object may have acquired during its lifetime, such as dynamic memory.
-	```cpp
- 	class Car {
-	public:
-    	std::string brand;
-    	Car(std::string b) : brand(b) {} // Constructor
-    	~Car() { // Destructor
-			std::cout << brand << " is being destroyed." << std::endl;
-    	}
-	};
-	```
-	- `Member Functions:`
+```cpp
+class Car {
+public:
+	std::string brand;
+	Car(std::string b) : brand(b) {} // Constructor
+	~Car() { // Destructor
+		std::cout << brand << " is being destroyed." << std::endl;
+	}
+};
+```
+- `Member Functions:`
 Member functions can manipulate the data members of a class. They can also be declared as `const`, meaning they do not modify the object’s state.
-	```cpp
- 	class Car {
-	public:
-    	std::string brand;
-    	Car(tsd::string b) : brand(b) {}
-    
-    	void display() const { // Const member function
-     	   std::cout << "Brand: " << brand << std::endl;
-    	}
-	};
-	```
+```cpp
+class Car {
+public:
+	std::string brand;
+	Car(tsd::string b) : brand(b) {}
+
+	void display() const { // Const member function
+ 	   std::cout << "Brand: " << brand << std::endl;
+	}
+};
+```
 ### Standard Input/Output Streams:
 C++ uses streams for input and output. The standard library provides `std::cin` for input and `std::cout` for output. These are part of the `<iostream>` library.
 ```cpp
@@ -176,28 +176,28 @@ public:
 	Point(int a, int b) : x(a), y(b) {} // Initialization list
 };
 ```
- 	- `Static Members:`
+### Static Members:
 Static members belong to the class rather than any specific object. They are shared among all instances of the class.
-	```cpp
- 	class Counter {
-	public:
-    	static int count;
-    	Counter() { count++; }
-	};
+```cpp
+class Counter {
+public:
+	static int count;
+	Counter() { count++; }
+};
 
-	int Counter::count = 0; // Definition of static member
- 	```
- 	- `Const Members:`
+int Counter::count = 0; // Definition of static member
+```
+### Const Members:
 `const` members of a class cannot be modified after they are initialized. This is useful for defining constants or protecting data from accidental changes.
-	```cpp
- 	class Circle {
-	public:
-    	const double PI = 3.14159;
-    	double radius;
+```cpp
+class Circle {
+public:
+	const double PI = 3.14159;
+	double radius;
     
-    	Circle(double r) : radius(r) {}
-	};
- 	```
+	Circle(double r) : radius(r) {}
+};
+```
 These are the basic concepts of C++ programming. Understanding these will help us build more complex and efficient applications.
 
 
