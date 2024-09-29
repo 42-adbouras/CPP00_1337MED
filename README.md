@@ -1,16 +1,13 @@
 ### Table of Contents
 
 - [Introduction](#introduction)
-	* [Namespaces:](namespaces:)
-	* Classes:
+	* [Namespaces:](#Namespaces)
+	* [Classes:](#Classes)
     	* Access Specifiers:
     	* Constructors:
     	* Destructors:
     	* Member Functions:
-	* Constructors:
-	* Destructors:
- 	* Member Functions:
- 	* Standard Input/Output Streams:
+	* Standard Input/Output Streams:
   	* Initialization Lists:
   	* Static Members:
   	* Const Members:
@@ -24,7 +21,7 @@
 ## Introduction
 C++ is a powerful, high level programming language that supports both procedural and Object Oriented Programming paradigms.\
 Created by Bjarne Stroustrup as an extension of the C programming language, or "C with Classes" (source: [Wikipedia](https://en.wikipedia.org/wiki/C++)).\
-	The goal of these modules is to introduce us to Object-Oriented Programming.
+The goal of these modules is to introduce us to Object-Oriented Programming.
 This will be the starting point of our C++ journey. Many languages are recommended to learn OOP. 42 decided to choose C++ since it’s derived from your old friend C.\
 Because this is a complex language, and in order to keep things simple, our code should comply with the C++98 standard.
 We are aware modern C++ is way different in a lot of aspects. So if you want to
@@ -33,7 +30,7 @@ Core!\
 We will discover new concepts step-by-step. The exercises will progressively increase
 in complexity.\
 
-- Namespaces:\
+# Namespaces:
 	Namespase is a declarative region that provides a scope to the identifiers (the names of types, functions, variables, etc) inside it.\
 Namespaces are used in C++ to avoid name collisions. They allow you to group entities like classes, functions, and variables under a unique identifier.
 The standard library uses the `std` namespace. You can access it by using `std::` or by including `using namespace std;` at the beginning of your code.
@@ -56,7 +53,7 @@ int main( void ) {
     return (0);
 }
 ```
-- Classes:\
+# Classes:
 	A class in C++ is a user defined data type that encapsulates data and functions that operate on that data. It serves as a blueprint for creating an object.
 Here's a more detailed look at classes and their components.
 	- `Access Specifiers:`
