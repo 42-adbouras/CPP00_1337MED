@@ -6,13 +6,13 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 18:53:37 by adbouras          #+#    #+#             */
-/*   Updated: 2024/09/26 21:19:26 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/09/30 13:31:10 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/Ringception.hpp"
 
-int main(void)
+int main( void )
 {
 	PhoneBook	contacts;
 	str			line;
@@ -21,14 +21,12 @@ int main(void)
 	{
 		ft_instructions();
 		std::getline(std::cin, line);
-		if (line.empty())
+		if (line.empty() || line == "EXIT")
 			break ;
 		if (line == "ADD")
 			add_contact(&contacts);
 		else if (line == "SEARCH")
 			search_contact(&contacts);
-		else if (line == "EXIT")
-			break ;
 		line = "";
 	}
 	std::cout << "Catch you later!" << std::endl;

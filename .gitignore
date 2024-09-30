@@ -1,0 +1,8 @@
+objects/
+.vscode
+.DS_Store
+bank
+Ringception
+megaphone
+*.txt
+*.log
