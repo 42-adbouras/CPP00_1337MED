@@ -6,16 +6,19 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 11:03:33 by adbouras          #+#    #+#             */
-/*   Updated: 2024/09/24 10:37:49 by adbouras         ###   ########.fr       */
+/*   Updated: 2024/09/30 17:45:41 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
+#include <iostream>
+#include <iomanip>
+#include <string>
 
-int Account::_nbAccounts = 0;
-int Account::_totalAmount = 0;
-int Account::_totalNbDeposits = 0;
-int Account::_totalNbWithdrawals = 0;
+int 	Account::_nbAccounts = 0;
+int 	Account::_totalAmount = 0;
+int 	Account::_totalNbDeposits = 0;
+int 	Account::_totalNbWithdrawals = 0;
 
 int		Account::getNbAccounts( void ) { return (_nbAccounts); }
 int		Account::getTotalAmount( void ) { return (_totalAmount); }
@@ -75,6 +78,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 }
 
 int		Account::checkAmount( void ) const { return (_amount); }
+
 void	Account::displayStatus( void ) const
 {
 	_displayTimestamp();
@@ -84,5 +88,18 @@ void	Account::displayStatus( void ) const
 
 void	Account::_displayTimestamp( void )
 {
-	std::cout << "[19920104_091532] ";
+	time_t	current;
+	tm		*local;
+
+	current	= time(NULL);
+	local	= localtime(&current);
+	std::cout << "[";
+	std::cout << local->tm_year + 1900;
+	std::cout << std::setw(2) << std::setfill('0') << local->tm_mon + 1;
+	std::cout << std::setw(2) << std::setfill('0') << local->tm_mday;
+	std::cout << "_";
+	std::cout << std::setw(2) << std::setfill('0') << local->tm_hour;
+	std::cout << std::setw(2) << std::setfill('0') << local->tm_min;
+	std::cout << std::setw(2) << std::setfill('0') << local->tm_sec;
+	std::cout << "] ";
 }
