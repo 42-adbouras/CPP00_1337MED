@@ -12,11 +12,8 @@
   	* [Static Members](#Static-Members)
   	* [Const Members](#Const-Members)
 - [ex00. Megaphone](#ex00-megaphone)
-	* [Example](#example)
 - [ex01. My Awesome PhoneBook](#ex01-my-awesome-phonebook)
-	* [Example](#example-1)
 - [ex02. The Job Of Your Dreams](#ex02-the-job-of-your-dreams)
-	* [Example](#example-2)
 
 ## Introduction
 C++ is a powerful, high level programming language that supports both procedural and Object Oriented Programming paradigms.\
@@ -200,6 +197,7 @@ public:
 ```
 These are the basic concepts of C++ programming. Understanding these will help us build more complex and efficient applications.
 
+## ex00. Megaphone
+This exercise is straightforward: use two nested loops to print the double char array `av`, passing each character to `toupper()`. Remember to cast the returned value to `(char)`; otherwise, it will display the decimal ASCII value.
 
-
-
+## ex01. My Awesome PhoneBook
