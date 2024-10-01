@@ -233,4 +233,50 @@ private:
 The `set_info(str info, str value)` method assigns a value to the specified attribute, while `get_info(str info)` retrieves the requested attribute. The `info` parameter acts as a flag; for example, `"first"` corresponds to `first_name`, and `"last"` corresponds to `last_name`, and so on.
 
 ## ex02. The Job Of Your Dreams
-In this final exercise, we have two files that will assist us in developing a class along with the required static and member functions. These functions will enable the main function in tests.cpp to generate output identical to that in the file 19920104_091532.log (excluding the various timestamps). Our task is to understand the functionality needed to create the corresponding file, Account.cpp. Additionally, we have a header file that includes the class definition in Account.hpp.
+In this final exercise, we have two files that will assist us in developing a class along with the required static and member functions. These functions will enable the main function in tests.cpp to generate output identical to that in the file 19920104_091532.log (excluding the various timestamps). Our task is to understand the functionality needed to create the corresponding file, Account.cpp. Additionally, we have a header file that includes the class definition in Account.hpp.\
+
+`getNbAccounts( void );` returns `_nbAccounts`\
+`getTotalAmount( void );` returns `_totalAmount`\
+`getNbDeposits( void );` returns `_totalNbDeposits`\
+`getNbWithdrawals( void );` returns `_totalNbWithdrawals`\
+`displayAccountsInfos( void );` displays current status as:\
+```
+[20241001_133236] accounts:8;total:20049;deposits:0;withdrawals:0
+```
+
+`Account( int initial_deposit );` Constructor, creates an Account object with an initial deposit.\
+```
+example:
+[20241001_133236] index:0;amount:42;created
+[20241001_133236] index:1;amount:54;created
+...
+```
+`~Account( void );` Destructor, it prints an account's index and `_amount`
+```
+example:
+[20241001_133236] index:7;amount:8942;closed
+[20241001_133236] index:6;amount:106;closed
+...
+```
+
+`makeDeposit( int deposit );` should print previous amount, deposit, current amount and number of deposits.
+```
+example:
+[20241001_133236] index:2;p_amount:957;deposit:564;amount:1521;nb_deposits:1
+[20241001_133236] index:3;p_amount:432;deposit:2;amount:434;nb_deposits:1
+...
+```
+
+`makeWithdrawal( int withdrawal );` You have to check if it possible to withdrawls first, if not possible you have to return false and print previous amount and then refuse (look example bellow).\
+Otherwise you should increment `_nbWithdrawals` `_totalNbWithdrawals` subtitude withdrawal from amount and total amount.
+```
+example:
+[20241001_133236] index:5;p_amount:23;withdrawal:refused
+[20241001_133236] index:6;p_amount:763;withdrawal:657;amount:106;nb_withdrawals:1
+[20241001_133236] index:7;p_amount:16596;withdrawal:7654;amount:8942;nb_withdrawals:1
+...
+```
+
+`checkAmount( void ) const;`
+
+`displayStatus( void ) const;`
