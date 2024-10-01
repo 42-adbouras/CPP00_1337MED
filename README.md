@@ -201,3 +201,36 @@ These are the basic concepts of C++ programming. Understanding these will help u
 This exercise is straightforward: use two nested loops to print the double char array `av`, passing each character to `toupper()`. Remember to cast the returned value to `(char)`; otherwise, it will display the decimal ASCII value.
 
 ## ex01. My Awesome PhoneBook
+In this exercise, we need to create a simple interactive phonebook UI that can store eight contacts.\
+Here’s my implementation of the `PhoneBook` class:
+```cpp
+class PhoneBook
+{
+private:
+	Contact	contact[8];
+public:
+	void	set_contact(int index, Contact contact);
+	Contact	get_contact(int index);
+};
+```
+
+The `set_contact(int index, Contact contact)` method initializes the contact at the specified index, while `get_contact(int index)` retrieves the contact at that index.\
+And this is my implementation of the `Contact` class:
+```cpp
+class Contact
+{
+public:
+    void    set_info(str info, str value);
+    str     get_info(str info);
+private:
+	str		first_name;
+	str		last_name;
+	str		nickname;
+	str		phone_num;
+	str		secret;
+};
+```
+The `set_info(str info, str value)` method assigns a value to the specified attribute, while `get_info(str info)` retrieves the requested attribute. The `info` parameter acts as a flag; for example, `"first"` corresponds to `first_name`, and `"last"` corresponds to `last_name`, and so on.
+
+## ex02. The Job Of Your Dreams
+In this final exercise, we have two files that will assist us in developing a class along with the required static and member functions. These functions will enable the main function in tests.cpp to generate output identical to that in the file 19920104_091532.log (excluding the various timestamps). Our task is to understand the functionality needed to create the corresponding file, Account.cpp. Additionally, we have a header file that includes the class definition in Account.hpp.
